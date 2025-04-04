@@ -14,6 +14,11 @@ export default function Navbar() {
             <li><Link href="/pricing">價格方案</Link></li>
             <li><Link href="/customer-form">客戶諮詢</Link></li>
             <li><Link href="/project-tracking">專案追蹤</Link></li>
+            <li>
+              <a href="tel:+886903382499" className="btn btn-primary">
+                立即聯繫
+              </a>
+            </li>
           </ul>
         </div>
       </div>
