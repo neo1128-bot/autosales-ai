@@ -2,23 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+:root {
+  --primary-color: #0A2463;
+  --secondary-color: #247BA0;
+  --accent-color: #00F5FF;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* 自定義滾動條 */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-* {
-  box-sizing: border-box;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.btn-primary {
-  @apply bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors;
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* 漸變動畫效果 */
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 科技感動畫 */
+.tech-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-animation::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 245, 255, 0.1) 0%,
+    rgba(0, 245, 255, 0) 50%,
+    rgba(0, 245, 255, 0.1) 100%
+  );
+  animation: techShine 3s infinite;
+}
+
+@keyframes techShine {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
