@@ -1,4 +1,9 @@
 {
+  "dependencies": {
+    "react-toastify": "^9.0.0"
+  }
+}
+{
   "name": "autosales-ai",
   "version": "1.0.0",
   "private": true,
