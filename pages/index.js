@@ -7,8 +7,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <Head>
         <title>AutoSales.AI - 智能銷售自動化平台</title>
-        <meta name="description" content="AutoSales.AI 提供智能銷售自動化解決方案，專業客製化服務" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="AutoSales.AI 提供智能銷售自動化解決方案" />
       </Head>
 
       <Navbar />
@@ -32,27 +31,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 服務特點 */}
-        <section className="py-16">
-          <h2 className="text-3xl font-bold text-center mb-12">我們的服務</h2>
+        {/* 聯絡資訊 */}
+        <section className="bg-white rounded-lg shadow-sm p-8 mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-center">聯絡我們</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">專業報價服務</h3>
-              <p className="text-gray-600">
-                根據您的需求提供詳細報價，包含完整專案評估和時程規劃
-              </p>
+            <div className="text-center">
+              <div className="mb-2">電話</div>
+              <a href="tel:+886903382499" className="text-primary hover:underline">
+                +886-903-382-499
+              </a>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">客製化方案</h3>
-              <p className="text-gray-600">
-                提供個性化解決方案，可依據您的特殊需求進行客製化開發
-              </p>
+            <div className="text-center">
+              <div className="mb-2">LINE ID</div>
+              <div className="text-primary">loveone1128</div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">專案進度追蹤</h3>
-              <p className="text-gray-600">
-                完整的專案管理系統，即時掌握開發進度和時程
-              </p>
+            <div className="text-center">
+              <div className="mb-2">電子郵件</div>
+              <a href="mailto:huq112800@gmail.com" className="text-primary hover:underline">
+                huq112800@gmail.com
+              </a>
             </div>
           </div>
         </section>
@@ -82,17 +79,6 @@ export default function Home() {
               <p className="text-gray-600">專案進度追蹤</p>
             </div>
           </div>
-        </section>
-
-        {/* 聯絡我們 */}
-        <section className="py-16 text-center">
-          <h2 className="text-3xl font-bold mb-8">需要更多資訊？</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            我們的專業團隊隨時為您服務
-          </p>
-          <Link href="/contact" className="btn btn-primary">
-            聯絡我們
-          </Link>
         </section>
       </main>
     </div>
