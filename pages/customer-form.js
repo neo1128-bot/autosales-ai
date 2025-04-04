@@ -1,93 +1,7 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-// 前面的 import 和 useState 部分保持不變...
 
-export default function CustomerForm() {
-  // 前面的 state 和 handleSubmit 部分保持不變...
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Head>
-        <title>需求諮詢表單 - AutoSales.AI</title>
-        <meta name="description" content="填寫您的需求，我們將為您提供專業報價" />
-      </Head>
-
-      <Navbar />
-
-      <div className="container mx-auto px-4 py-12">
-        {/* 更新：完整聯絡資訊區塊 */}
-        <div className="max-w-4xl mx-auto mb-8 bg-white rounded-lg shadow-sm p-6">
-          <h2 className="text-2xl font-bold mb-6">聯絡資訊</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* 左側：直接聯絡方式 */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold mb-4">立即聯繫我們</h3>
-              
-              <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <div>
-                  <div className="font-medium">電話</div>
-                  <a href="tel:+886903382499" className="text-primary hover:underline">+886-903-382-499</a>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <div>
-                  <div className="font-medium">電子郵件</div>
-                  <a href="mailto:huq112800@gmail.com" className="text-primary hover:underline">huq112800@gmail.com</a>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                  <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
-                </svg>
-                <div>
-                  <div className="font-medium">LINE ID</div>
-                  <div className="text-primary">loveone1128</div>
-                </div>
-              </div>
-            </div>
-
-            {/* 右側：營業時間和提示 */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold mb-4">服務時間</h3>
-              
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span>週一至週五</span>
-                  <span>09:00 - 18:00</span>
-                </div>
-                <div className="flex justify-between text-gray-500">
-                  <span>週六、週日</span>
-                  <span>依約預約</span>
-                </div>
-              </div>
-
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                <h4 className="font-medium text-blue-800 mb-2">快速回覆保證</h4>
-                <p className="text-sm text-blue-600">
-                  我們承諾在收到您的諮詢後，將於 24 小時內回覆。如有緊急需求，建議直接透過 LINE 或電話聯繫。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 原有的表單內容保持不變... */}
-        
-      </div>
-    </div>
-  )
-}
 export default function CustomerForm() {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState({
@@ -113,7 +27,7 @@ export default function CustomerForm() {
     customizationNeeds: '',
     requirements: '',
     
-    // 其他需求
+    // 付款相關
     paymentMethod: '',
     invoiceNeeds: ''
   })
@@ -138,6 +52,29 @@ export default function CustomerForm() {
       <Navbar />
 
       <div className="container mx-auto px-4 py-12">
+        {/* 聯絡資訊 */}
+        <div className="max-w-4xl mx-auto mb-8 bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-bold mb-6">聯絡資訊</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div>
+              <h3 className="font-medium mb-2">電話</h3>
+              <a href="tel:+886903382499" className="text-primary hover:underline">
+                +886-903-382-499
+              </a>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">LINE ID</h3>
+              <div className="text-primary">loveone1128</div>
+            </div>
+            <div>
+              <h3 className="font-medium mb-2">電子郵件</h3>
+              <a href="mailto:huq112800@gmail.com" className="text-primary hover:underline">
+                huq112800@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* 進度指示器 */}
         <div className="max-w-4xl mx-auto mb-8">
           <div className="flex justify-between">
@@ -191,8 +128,6 @@ export default function CustomerForm() {
                     <input
                       type="number"
                       required
-                      min="18"
-                      max="120"
                       className="w-full px-4 py-2 border rounded-md"
                       value={formData.age}
                       onChange={(e) => setFormData({...formData, age: e.target.value})}
@@ -461,6 +396,14 @@ export default function CustomerForm() {
             </button>
           </div>
         </form>
+
+        {/* 提示訊息 */}
+        <div className="max-w-4xl mx-auto mt-8 bg-blue-50 rounded-lg p-4">
+          <p className="text-blue-800">
+            提交需求後，我們將在 24 小時內與您聯繫，提供專業的報價和建議。
+            如有緊急需求，歡迎直接透過上方聯絡方式與我們聯繫。
+          </p>
+        </div>
       </div>
     </div>
   )
