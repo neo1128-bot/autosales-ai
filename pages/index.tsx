@@ -1,7 +1,13 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Link from 'next/link'
-
+ export default function Home() {
+     return (
+       <div className="p-4">
+         <h1 className="text-2xl font-bold">AutoSales.AI</h1>
+       </div>
+     );
+   }
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
