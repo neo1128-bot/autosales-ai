@@ -39,6 +39,7 @@ export default function CustomerForm() {
     } else {
       // TODO: 實作表單提交邏輯
       console.log('提交表單:', formData)
+      alert('感謝您的提交！我們將盡快與您聯繫。')
     }
   }
 
